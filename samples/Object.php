@@ -63,10 +63,6 @@ Common::println("c.file.copy is deleted");
 Common::println("b.file is created");
 Common::println($result['x-oss-request-id']);
 
-// Check whether an object exists
-$doesExist = $ossClient->doesObjectExist($bucket, "c.file.copy");
-Common::println("file c.file.copy exist? " . ($doesExist ? "yes" : "no"));
-
 // Delete multiple objects in batch
 $result = $ossClient->deleteObjects($bucket, array("b.file", "c.file"));
 foreach($result as $object)
